@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
     return BlocBuilder<ThemeCubit, ThemeStates>(
       builder: (context, state) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Chat App',
          theme: state is LightThemeStates ? AppThemes.lightTheme : AppThemes.darkTheme,
           home: OnBoardingScreen()
