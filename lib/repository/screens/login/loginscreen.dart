@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat/domain/constants/appcolors.dart';
+import 'package:flutter_chat/repository/screens/otp/otpscreen.dart';
 import 'package:flutter_chat/repository/screens/widgets/uihelper.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -56,7 +57,12 @@ class LoginScreen extends StatelessWidget {
       ),
       floatingActionButton: UiHelper.customButton(
         buttonName: "Continue",
-        callback: () {},
+        callback: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => OtpScreen()),
+          );
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
