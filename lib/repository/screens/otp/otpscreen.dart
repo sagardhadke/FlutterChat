@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_chat/domain/constants/cubits/themecubit.dart';
+import 'package:flutter_chat/repository/screens/profile/profilescreen.dart';
 import 'package:flutter_chat/repository/screens/widgets/uihelper.dart';
 import 'package:pinput/pinput.dart';
 
@@ -48,6 +51,14 @@ class OtpScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? AppColors.scaffoldDark
             : AppColors.scaffoldLight,
+        actions: [
+          IconButton(
+            onPressed: () {
+              BlocProvider.of<ThemeCubit>(context).toggleTheme();
+            },
+            icon: Icon(Icons.dark_mode),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -75,7 +86,12 @@ class OtpScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Pinput(
-                onCompleted: (value) {},
+                onCompleted: (value) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => ProfileScreen()),
+                  );
+                },
                 autofocus: true,
                 controller: otpController,
                 defaultPinTheme: defaultPinTheme,
