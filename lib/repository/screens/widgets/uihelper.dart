@@ -59,4 +59,40 @@ class UiHelper {
       ),
     );
   }
+
+  static customTextFiled({
+    required TextEditingController controller,
+    required String text,
+    required TextInputType textinputype,
+    required BuildContext context,
+  }) {
+    return Container(
+      height: 45,
+      width: 350,
+      decoration: BoxDecoration(
+        color: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.containerDarkMode
+            : AppColors.containerLightMode,
+        borderRadius: BorderRadius.circular(7),
+      ),
+
+      child: Padding(
+        padding: const EdgeInsets.only(left: 10),
+        child: TextField(
+          controller: controller,
+          keyboardType: textinputype,
+          decoration: InputDecoration(
+            hintText: text,
+            hintStyle: TextStyle(
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? AppColors.hintDarkMode
+                  : AppColors.hintLightMode,
+              fontSize: 14,
+            ),
+            border: InputBorder.none,
+          ),
+        ),
+      ),
+    );
+  }
 }

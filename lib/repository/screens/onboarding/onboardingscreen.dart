@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_chat/domain/constants/appcolors.dart';
 import 'package:flutter_chat/domain/constants/cubits/themecubit.dart';
-import 'package:flutter_chat/repository/screens/onboarding/widgets/uihelper.dart';
+import 'package:flutter_chat/repository/screens/login/loginscreen.dart';
+import 'package:flutter_chat/repository/screens/widgets/uihelper.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -62,7 +63,12 @@ class OnBoardingScreen extends StatelessWidget {
       ),
       floatingActionButton: UiHelper.customButton(
         buttonName: 'Start Messaging',
-        callback: () {},
+        callback: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => LoginScreen()),
+          );
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
