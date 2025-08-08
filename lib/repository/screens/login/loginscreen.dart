@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_chat/domain/constants/appcolors.dart';
+import 'package:flutter_chat/domain/constants/cubits/themecubit.dart';
 import 'package:flutter_chat/repository/screens/otp/otpscreen.dart';
 import 'package:flutter_chat/repository/screens/widgets/uihelper.dart';
 
@@ -19,6 +21,14 @@ class LoginScreen extends StatelessWidget {
           },
           icon: Icon(CupertinoIcons.back),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              BlocProvider.of<ThemeCubit>(context).toggleTheme();
+            },
+            icon: Icon(Icons.dark_mode_outlined),
+          ),
+        ],
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? AppColors.scaffoldDark
             : AppColors.scaffoldLight,

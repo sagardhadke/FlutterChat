@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_chat/domain/constants/appcolors.dart';
 import 'package:flutter_chat/domain/constants/cubits/themecubit.dart';
+import 'package:flutter_chat/repository/screens/bottomnav/bottomnavigationscreen.dart';
 import 'package:flutter_chat/repository/screens/widgets/uihelper.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -84,7 +85,15 @@ class ProfileScreen extends StatelessWidget {
       floatingActionButton: UiHelper.customButton(
         buttonName: "Save",
         callback: () {
-          
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const BottomNavScreen();
+              },
+            ),
+            (route) => false,
+          );
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
