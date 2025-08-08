@@ -40,3 +40,19 @@ A new Flutter project.
     <td><img src="assets/screens/moreDark.png" width=270 ></td>
   </tr>
  </table>
+
+ ## Installation
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+
+- **Flutter**: [Flutter Installation Guide](https://flutter.dev/docs/get-started/install)
+- **Dart**: Dart comes bundled with Flutter, so no separate installation is required.
+- **Android Studio** or **VS Code** (with Flutter and Dart plugins installed).
+
+### Clone the repository
+
+```bash
+git clone https://github.com/sagardhadke/FlutterChat.git
+cd FlutterChat
