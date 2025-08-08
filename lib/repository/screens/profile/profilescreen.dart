@@ -71,6 +71,7 @@ class ProfileScreen extends StatelessWidget {
               text: "First Name (Required)",
               textinputype: TextInputType.name,
               context: context,
+              iconsData: Icons.person,
             ),
             SizedBox(height: 10),
             UiHelper.customTextFiled(
@@ -78,6 +79,7 @@ class ProfileScreen extends StatelessWidget {
               text: "Last Name (Required)",
               textinputype: TextInputType.name,
               context: context,
+              iconsData: CupertinoIcons.person_2,
             ),
           ],
         ),

@@ -9,9 +9,7 @@ class ChatsScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Chats")
-          ],
+          children: [Text("Chats")],
         ),
       ),
     );
